@@ -1,9 +1,17 @@
-import '../styles/style.css';
+import '../sass/app.scss';
+import Header from './Header';
+import Searchbar from './Searchbar';
+import Filter from './Filter';
+import Country from './Country';
+import Footer from './Footer';
 
 function App() {
   return (
-    <div className="App">
-     
+    <div>
+      <Header />
+      <Searchbar />
+      <Filter />
+      <Country />
     </div>
   );
 }
