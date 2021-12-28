@@ -1,44 +1,104 @@
-import * as React from 'react';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormHelperText from '@mui/material/FormHelperText';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
-import OutlinedInput from '@mui/material/OutlinedInput';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import React, { Component } from 'react';
+import Select, { components, DropdownIndicatorProps } from 'react-select';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { red } from '@mui/material/colors';
+import { NoEncryption } from '@mui/icons-material';
 
 function Filter() {
+    const element = <FontAwesomeIcon icon={faChevronDown} />
 
-    const [filter, setFilter] = React.useState('');
+      const customStyles = {
+        option: (provided) => ({
+          ...provided,
+          border: 'none',
+        //   color: state.isSelected ? 'red' : 'blue',
+          paddingTop: 20,
+          paddingBottom: 20,
+          paddingRight: 20,
+          paddingLeft: 40,
+          fontSize: "1.4rem",   
 
-    const handleChange = (event) => {
-      setFilter(event.target.value);
-    };
-    
-    return <div className="filterBar">
-      <FormControl sx={{ m: 1, minWidth: 120 }}>
-        <Select
-          value={filter}
-          onChange={handleChange}
-          displayEmpty
-          inputProps={{ 'aria-label': 'Without label' }}
-          input={<OutlinedInput />}
-          renderValue={(selected) => {
-            if (selected.length === 0) {
-              return <span>Filter by Region</span>;
-            }
+        }),
+        
+        container: (provided) => ({
+            ...provided,
+            
+          }),
 
-            return selected.join(', ');
-          }}
+        indicatorsContainer: (provided) => ({
+            ...provided,
+            width: 50,
+            height: 100,
+            
+          }),
 
+          control: (provided) => ({
+            ...provided,
+            width: 400,
+            paddingLeft: 40,
+            borderRadius: 10,
+            border: 0,
+          }),
+
+          dropdownIndicator: (provided) => ({
+            ...provided,
+            // backgroundColor: "red",
+            // paddingRight: 30,
+            fontSize: "1.1rem",
+            color: "#111517"
+          }),
+
+          indicatorSeparator: (provided) => ({
+            ...provided,
+            backgroundColor: "none",
+          }),
+
+          menu: (provided) => ({
+            ...provided,
+            width: 400,
+          }),
+
+          placeholder: (provided) => ({
+            ...provided,
+            fontSize: "1.4rem",
+            color: "black",
+          }),
+        
+          singleValue: (provided) => ({
+            ...provided,
+            //selected value
+          }),
           
-        >
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
-        </Select>
-      </FormControl>
-    </div>
+
+          valueContainer: (provided) => ({
+            ...provided,
+            fontSize: "1.4rem",
+            color: "black",
+          }),
+      }
+
+      const DropdownIndicator = (props
+        ) => {
+          return (
+            <components.DropdownIndicator {...props}>
+              {element}
+            </components.DropdownIndicator>
+          );
+        };
+
+
+    const options = [
+        { value: 'chocolate', label: 'Chocolate' },
+        { value: 'strawberry', label: 'Strawberry' },
+        { value: 'vanilla', label: 'Vanilla' }
+      ];
+
+    return <div className="filterBar shadow-sm">
+        <Select closeMenuOnSelect={false}
+        components={{ DropdownIndicator }}
+        className="selectComponent" styles={customStyles} options={options} placeholder="Filter by Region" />
+            </div>
 }
 
 export default Filter;

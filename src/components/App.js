@@ -12,6 +12,7 @@ function App() {
       <Searchbar />
       <Filter />
       <Country />
+      <Footer />
     </div>
   );
 }
