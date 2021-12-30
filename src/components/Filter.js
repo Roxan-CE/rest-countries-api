@@ -106,9 +106,7 @@ function Filter(props) {
       (region) => region.name === selection
     );
 
-    console.log("But I got: " + selectedRegion);
-
-    props.onSelect(selection);
+    props.onSelect(selectedRegion[0].API);
   };
 
   return (
