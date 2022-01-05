@@ -7,11 +7,11 @@ import React, { useState, useEffect } from "react";
 import Datalist from "./Datalist";
 
 function App() {
-  const [url, setUrl] = useState("https://restcountries.com/v3.1/all");
+  const [apiURL, setApiUrl] = useState("https://restcountries.com/v3.1/all");
 
   const changeSelection = (selection) => {
     console.log("I received " + selection);
-    setUrl(selection);
+    setApiUrl(selection);
   };
 
   return (
@@ -19,7 +19,7 @@ function App() {
       <Header />
       <Searchbar onSubmit={changeSelection} />
       <Filter onSelect={changeSelection} />
-      <Datalist API={url} />
+      <Datalist API={apiURL} />
       <Footer />
     </div>
   );

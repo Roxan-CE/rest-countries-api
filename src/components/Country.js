@@ -1,8 +1,15 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Country(props) {
+  const navigate = useNavigate();
+
+  function handleClick(event) {
+    navigate("countrydetails/" + props.name);
+  }
+
   return (
-    <div>
+    <div onClick={handleClick}>
       <div className="card col-sm-6 ">
         <img src={props.flag} className="flag card-img-top" alt="Flag" />
         <div className="card-body">
