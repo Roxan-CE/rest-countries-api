@@ -32,6 +32,7 @@ function Datalist(props) {
     return countries.map((country) => {
       return (
         <Country
+          key={country.cca3 + country.ccn3}
           name={country.name.common}
           population={country.population}
           region={country.region}
