@@ -1,12 +1,19 @@
 import React from "react";
+import {
+  Div,
+  StyledHeader,
+  H1,
+  ThemeToggle,
+  MoonIcon,
+} from "./styleComponents/headerStyles";
 
 function Header(props) {
   return (
-    <div className="container">
-      <header className="mainHeader d-flex shadow-sm bg-white rounded">
-        <h1 className="headerTitle">Where in the world?</h1>
-        <p onClick={props.onClick} className="darkModeLink">
-          <svg
+    <Div theme={props.theme} className="container">
+      <StyledHeader className="d-flex shadow-sm rounded">
+        <H1 className="headerTitle">Where in the world?</H1>
+        <ThemeToggle onClick={props.onClick} className="darkModeLink">
+          <MoonIcon
             xmlns="http://www.w3.org/2000/svg"
             className="ionicon"
             viewBox="0 0 512 512"
@@ -20,11 +27,11 @@ function Header(props) {
               strokeLinejoin="round"
               strokeWidth="40"
             />
-          </svg>
-          Dark Mode
-        </p>
-      </header>
-    </div>
+          </MoonIcon>
+          {props.theme.body === "#fafafa" ? "Dark Mode" : "Light Mode"}
+        </ThemeToggle>
+      </StyledHeader>
+    </Div>
   );
 }
 
