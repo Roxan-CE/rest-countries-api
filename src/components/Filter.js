@@ -7,33 +7,46 @@ function Filter(props) {
   const element = <FontAwesomeIcon icon={faChevronDown} />;
 
   const customStyles = {
-    option: (provided) => ({
+    option: (provided, state) => ({
       ...provided,
       border: "none",
-      //   color: state.isSelected ? 'red' : 'blue',
-      paddingTop: 20,
-      paddingBottom: 20,
+      paddingTop: 6,
+      paddingBottom: 6,
       paddingRight: 20,
-      paddingLeft: 40,
-      fontSize: "1.4rem",
+      paddingLeft: 48,
+      fontSize: "1.5rem",
+      margin: 0,
+      color: state.isFocused ? props.theme.element : props.theme.text,
+      backgroundColor: state.isFocused ? props.theme.text : "transparent",
     }),
 
-    container: (provided) => ({
+    container: (provided, state) => ({
       ...provided,
+      backgroundColor: "transparent",
+      paddingTop: 32,
+      paddingBottom: 65,
+      paddingRight: 20,
+      paddingLeft: 32,
     }),
 
     indicatorsContainer: (provided) => ({
       ...provided,
-      width: 50,
+      width: 65,
       height: 100,
+      backgroundColor: "transparent",
     }),
 
-    control: (provided) => ({
+    control: (provided, state) => ({
       ...provided,
       width: 400,
       paddingLeft: 40,
       borderRadius: 10,
       border: 0,
+      backgroundColor: props.theme.element,
+      boxShadow: 0,
+      "&:hover": {
+        border: state.isFocused ? 0 : 0,
+      },
     }),
 
     dropdownIndicator: (provided) => ({
@@ -41,7 +54,8 @@ function Filter(props) {
       // backgroundColor: "red",
       // paddingRight: 30,
       fontSize: "1.1rem",
-      color: "#111517",
+      color: props.theme.text,
+      backgroundColor: "transparent",
     }),
 
     indicatorSeparator: (provided) => ({
@@ -52,23 +66,29 @@ function Filter(props) {
     menu: (provided) => ({
       ...provided,
       width: 400,
+      top: 132,
+      backgroundColor: props.theme.element,
+      paddingTop: 20,
+      borderRadius: 10,
     }),
 
     placeholder: (provided) => ({
       ...provided,
-      fontSize: "1.4rem",
-      color: "black",
+      fontSize: "1.5rem",
+      color: props.theme.text,
     }),
 
     singleValue: (provided) => ({
       ...provided,
       //selected value
+      color: props.theme.text,
     }),
 
     valueContainer: (provided) => ({
       ...provided,
-      fontSize: "1.4rem",
-      color: "black",
+      fontSize: "1.5rem",
+      color: props.theme.text,
+      backgroundColor: "transparent",
     }),
   };
 
@@ -112,7 +132,7 @@ function Filter(props) {
   return (
     <div className="filterBar shadow-sm">
       <Select
-        closeMenuOnSelect={false}
+        closeMenuOnSelect={true}
         components={{ DropdownIndicator }}
         className="selectComponent"
         styles={customStyles}

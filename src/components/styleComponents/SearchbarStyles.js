@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const CoverDiv = styled.div`
   position: relative;
-  margin: 12px -190px;
+  margin: 14px -195px;
   padding: 35px;
   background: ${(props) => props.theme.element};
   border-radius: 20px;
@@ -23,14 +23,14 @@ const Scover = styled.div`
   display: table-cell;
   vertical-align: middle;
   width: 150px;
-  padding-left: 20px;
+  padding-left: 70px;
 
   &:hover div {
     top: -1px;
     width: 35px;
     height: 8px;
     border-width: 0;
-    background-color: ${(props) => props.theme.text};
+    background-color: ${(props) => props.theme.input};
     border-radius: 20px;
   }
 
@@ -56,7 +56,7 @@ const Scover = styled.div`
   &:hover button span:after {
     right: -6px;
     width: 26px;
-    background-color: ${(props) => props.theme.text};
+    background-color: ${(props) => props.theme.input};
   }
 `;
 
@@ -77,12 +77,12 @@ const Scircle = styled.div`
   position: relative;
   top: -8px;
   left: 0;
-  width: 35px;
-  height: 35px;
+  width: 40px;
+  height: 40px;
   margin-top: 0;
   border-width: 10px;
   border: 7px solid;
-  border-color: ${(props) => props.theme.text};
+  border-color: ${(props) => props.theme.input};
   background-color: transparent;
   border-radius: 50%;
   transition: 0.5s ease all;
@@ -95,7 +95,7 @@ const Tdiv = styled.div`
 
 const TextInput = styled.input`
   color: ${(props) => props.theme.text};
-  padding: 0;
+  padding: 0 0 0 60px;
   margin: 0;
   border: 0;
   background-color: transparent;
@@ -105,20 +105,20 @@ const TextInput = styled.input`
   line-height: 1;
   outline: none;
   ::placeholder {
-    color: rgb(201, 201, 201);
+    color: ${(props) => props.theme.input};
   }
 `;
 
 const ButtonSpan = styled.span`
   position: absolute;
-  top: 30px;
-  left: 10px;
+  top: 28px;
+  left: 16px;
   display: block;
   width: 45px;
   height: 15px;
   background-color: transparent;
   border-radius: 10px;
-  transform: rotateZ(52deg);
+  transform: rotateZ(48deg);
   transition: 0.5s ease all;
 
   &:before,
@@ -127,9 +127,9 @@ const ButtonSpan = styled.span`
     position: absolute;
     bottom: 0;
     right: 0;
-    width: 26px;
+    width: 24px;
     height: 7px;
-    background-color: ${(props) => props.theme.text};
+    background-color: ${(props) => props.theme.input};
     border-radius: 10px;
     transform: rotateZ(0);
     transition: 0.5s ease all;

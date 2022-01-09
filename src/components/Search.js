@@ -15,8 +15,8 @@ function Search(props) {
   return (
     <div>
       <Searchbar theme={props.theme} onSubmit={changeSelection} />
-      <Filter onSelect={changeSelection} />
-      <Datalist API={apiURL} />
+      <Filter theme={props.theme} onSelect={changeSelection} />
+      <Datalist theme={props.theme} API={apiURL} />
     </div>
   );
 }
