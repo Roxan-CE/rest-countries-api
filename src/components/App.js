@@ -30,7 +30,7 @@ function App() {
         <GlobalStyles />
         <div>
           <Header theme={themeMode} onClick={themeToggler} />
-          <Search />
+          <Search theme={themeMode} />
           <Footer />
         </div>
       </>

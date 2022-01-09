@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Div = styled.div`
-  background: ${(props) => props.theme.body};
+  background: ${(props) => props.theme.element};
   color: ${(props) => props.theme.text};
   font-family: "Nunito Sans", sans-serif;
   font-weight: 300;

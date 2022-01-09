@@ -3,7 +3,7 @@ import Filter from "./Filter";
 import React, { useState } from "react";
 import Datalist from "./Datalist";
 
-function Search() {
+function Search(props) {
   // API LOGIC
 
   const [apiURL, setApiUrl] = useState("https://restcountries.com/v3.1/all");
@@ -14,7 +14,7 @@ function Search() {
 
   return (
     <div>
-      <Searchbar onSubmit={changeSelection} />
+      <Searchbar theme={props.theme} onSubmit={changeSelection} />
       <Filter onSelect={changeSelection} />
       <Datalist API={apiURL} />
     </div>
