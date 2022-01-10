@@ -6,6 +6,7 @@ import { lightTheme, darkTheme } from "./Themes";
 import { useDarkMode } from "./useDarkMode";
 import { ThemeProvider } from "styled-components";
 import MoreInfo from "./MoreInfo";
+
 function CountryDetails() {
   // THEME CONTROL
   const [theme, themeToggler] = useDarkMode();
@@ -39,7 +40,7 @@ function CountryDetails() {
             go back
           </button>
         </div>
-        <MoreInfo />
+        <MoreInfo theme={themeMode} />
         <Footer />
       </div>
     </ThemeProvider>

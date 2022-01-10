@@ -32,6 +32,7 @@ function Datalist(props) {
     return countries.map((country) => {
       return (
         <Country
+          theme={props.theme}
           key={country.cca3 + country.ccn3}
           name={country.name.common}
           population={country.population}

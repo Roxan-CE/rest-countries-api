@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import countryCodes from "./countryCodes";
 
-function MoreInfo() {
+function MoreInfo(props) {
   const { countryid } = useParams();
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);

@@ -20,11 +20,10 @@ function Filter(props) {
       backgroundColor: state.isFocused ? props.theme.text : "transparent",
     }),
 
-    container: (provided, state) => ({
+    container: (provided) => ({
       ...provided,
       backgroundColor: "transparent",
       paddingTop: 32,
-      paddingBottom: 65,
       paddingRight: 20,
       paddingLeft: 32,
     }),
@@ -130,11 +129,11 @@ function Filter(props) {
   };
 
   return (
-    <div className="filterBar shadow-sm">
+    <div className="filterBar">
       <Select
         closeMenuOnSelect={true}
         components={{ DropdownIndicator }}
-        className="selectComponent"
+        className="selectComponent "
         styles={customStyles}
         options={options}
         placeholder="Filter by Region"
