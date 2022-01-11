@@ -121,8 +121,8 @@ const ButtonSpan = styled.span`
   transform: rotateZ(48deg);
   transition: 0.5s ease all;
 
-  &:before,
-  &:after {
+  ::before,
+  ::after {
     content: "";
     position: absolute;
     bottom: 0;
