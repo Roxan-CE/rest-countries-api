@@ -49,7 +49,7 @@ function CountryDetails() {
           Back
         </Backbutton>
         <MoreInfo theme={themeMode} />
-        <Footer />
+        <Footer theme={themeMode} />
       </MainDiv>
     </ThemeProvider>
   );

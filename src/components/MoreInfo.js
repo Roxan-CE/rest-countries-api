@@ -1,7 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import countryCodes from "./countryCodes";
-import { CountryDiv, Flag, InfoBox } from "./styleComponents/CountryStyles";
+import {
+  BorderButton,
+  BorderDiv,
+  CountryDiv,
+  Flag,
+  InfoBox,
+} from "./styleComponents/CountryStyles";
 
 function MoreInfo(props) {
   const { countryid } = useParams();
@@ -87,46 +93,48 @@ function MoreInfo(props) {
 
         <InfoBox>
           <h1>{countryid}</h1>
-          <ul>
-            <li>
+          <div>
+            <p>
               <span>Native Name:</span> {currentName[0]}{" "}
-            </li>
-            <li>
+            </p>
+            <p>
               <span>Population:</span>{" "}
               {countryData[0].population.toLocaleString()}
-            </li>
-            <li>
+            </p>
+            <p>
               <span>Region:</span> {countryData[0].region}
-            </li>
-            <li>
+            </p>
+            <p>
               <span>Sub Region:</span> {countryData[0].subregion}{" "}
-            </li>
-            <li>
+            </p>
+            <p>
               <span>Capital:</span> {countryData[0].capital?.[0]}{" "}
-            </li>
-            <li>
+            </p>
+          </div>
+          <div>
+            <p>
               <span>Top Level Domain:</span>
               {countryData[0].tld.map((item) => item + " ")}
-            </li>
-            <li>
+            </p>
+            <p>
               <span>Currencies:</span> {currencyList[0]?.name}{" "}
-            </li>
-            <li>
+            </p>
+            <p>
               <span>Languages:</span>{" "}
               {allCurrency && currentLanguage.join(", ")}
-            </li>
-            <li>
-              <div>
-                <p>Border Countries:</p>
-                {countryData[0].borders &&
-                  eachBorder.map((border) => {
-                    return (
-                      <button onClick={handleBorderClick}>{border}</button>
-                    );
-                  })}{" "}
-              </div>
-            </li>
-          </ul>
+            </p>
+          </div>
+          <h2>Border Countries:</h2>
+          <BorderDiv>
+            {countryData[0].borders &&
+              eachBorder.map((border) => {
+                return (
+                  <BorderButton onClick={handleBorderClick}>
+                    {border}
+                  </BorderButton>
+                );
+              })}{" "}
+          </BorderDiv>
         </InfoBox>
       </CountryDiv>
     );

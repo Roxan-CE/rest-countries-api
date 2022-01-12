@@ -1,4 +1,15 @@
 import styled from "styled-components";
+import { device } from "./device.js";
+
+const SearchDiv = styled.div`
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+
+  @media ${device.tablet} {
+    min-width: 750px;
+  }
+`;
 
 const CoverDiv = styled.div`
   position: relative;
@@ -7,7 +18,12 @@ const CoverDiv = styled.div`
   background: ${(props) => props.theme.element};
   border-radius: 20px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.075), 0 0 0 10px transparent;
-  transform: scale(0.6);
+  transform: scale(0.45);
+
+  @media ${device.tablet} {
+    margin: 14px -90px;
+    transform: scale(0.72);
+  }
 `;
 
 const FormInput = styled.form`
@@ -104,6 +120,7 @@ const TextInput = styled.input`
   font-size: 2.5rem;
   line-height: 1;
   outline: none;
+
   ::placeholder {
     color: ${(props) => props.theme.input};
   }
@@ -137,6 +154,7 @@ const ButtonSpan = styled.span`
 `;
 
 export {
+  SearchDiv,
   CoverDiv,
   FormInput,
   TBDiv,

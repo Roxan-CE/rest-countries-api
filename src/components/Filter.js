@@ -14,47 +14,91 @@ function Filter(props) {
       paddingBottom: 6,
       paddingRight: 20,
       paddingLeft: 48,
-      fontSize: "1.5rem",
+      fontSize: "1.2rem",
       margin: 0,
       color: state.isFocused ? props.theme.element : props.theme.text,
       backgroundColor: state.isFocused ? props.theme.text : "transparent",
+
+      "@media only screen and (min-width: 750px)": {
+        ...provided,
+        fontSize: "1.5rem",
+        color: state.isFocused ? props.theme.element : props.theme.text,
+        backgroundColor: state.isFocused ? props.theme.text : "transparent",
+      },
     }),
 
     container: (provided) => ({
       ...provided,
       backgroundColor: "transparent",
-      paddingTop: 32,
-      paddingRight: 20,
-      paddingLeft: 32,
+      paddingTop: 0,
+      paddingRight: 0,
+      paddingLeft: 0,
+      width: "100vw",
+
+      "@media only screen and (min-width: 750px)": {
+        ...provided,
+        paddingTop: 32,
+        paddingRight: 20,
+        paddingLeft: 32,
+        backgroundColor: "transparent",
+      },
     }),
 
     indicatorsContainer: (provided) => ({
       ...provided,
-      width: 65,
-      height: 100,
+      width: 60,
+      height: 74,
       backgroundColor: "transparent",
+
+      "@media only screen and (min-width: 750px)": {
+        ...provided,
+        width: 65,
+        height: 100,
+        backgroundColor: "transparent",
+      },
     }),
 
     control: (provided, state) => ({
       ...provided,
-      width: 400,
-      paddingLeft: 40,
+      width: 265,
+      paddingLeft: 20,
       borderRadius: 10,
       border: 0,
       backgroundColor: props.theme.element,
-      boxShadow: 0,
+      boxShadow: "0 5px 20px rgb(0 0 0 / 8%), 0 0 0 10px transparent",
+      margin: "0 auto",
       "&:hover": {
         border: state.isFocused ? 0 : 0,
+        backgroundColor: props.theme.element,
+      },
+
+      "@media only screen and (min-width: 750px)": {
+        ...provided,
+        width: 400,
+        paddingLeft: 40,
+        borderRadius: 10,
+        backgroundColor: props.theme.element,
+        border: 0,
+        boxShadow: 0,
+        margin: 0,
+        "&:hover": {
+          border: state.isFocused ? 0 : 0,
+          backgroundColor: props.theme.element,
+        },
       },
     }),
 
     dropdownIndicator: (provided) => ({
       ...provided,
-      // backgroundColor: "red",
-      // paddingRight: 30,
-      fontSize: "1.1rem",
+      fontSize: "1rem",
       color: props.theme.text,
       backgroundColor: "transparent",
+
+      "@media only screen and (min-width: 750px)": {
+        ...provided,
+        fontSize: "1.1rem",
+        color: props.theme.text,
+      },
     }),
 
     indicatorSeparator: (provided) => ({
@@ -64,17 +108,34 @@ function Filter(props) {
 
     menu: (provided) => ({
       ...provided,
-      width: 400,
-      top: 132,
+      width: 265,
+      top: 85,
       backgroundColor: props.theme.element,
       paddingTop: 20,
+      paddingBottom: 20,
       borderRadius: 10,
+      margin: "0 auto",
+      left: 55,
+
+      "@media only screen and (min-width: 750px)": {
+        ...provided,
+        width: 400,
+        backgroundColor: props.theme.element,
+        top: 132,
+        left: 32,
+      },
     }),
 
     placeholder: (provided) => ({
       ...provided,
-      fontSize: "1.5rem",
+      fontSize: "1.1rem",
       color: props.theme.text,
+
+      "@media only screen and (min-width: 750px)": {
+        ...provided,
+        fontSize: "1.5rem",
+        color: props.theme.text,
+      },
     }),
 
     singleValue: (provided) => ({
@@ -85,9 +146,16 @@ function Filter(props) {
 
     valueContainer: (provided) => ({
       ...provided,
-      fontSize: "1.5rem",
+      fontSize: "1.15rem",
       color: props.theme.text,
       backgroundColor: "transparent",
+
+      "@media only screen and (min-width: 750px)": {
+        ...provided,
+        fontSize: "1.5rem",
+        color: props.theme.text,
+        backgroundColor: "transparent",
+      },
     }),
   };
 
@@ -138,6 +206,7 @@ function Filter(props) {
         options={options}
         placeholder="Filter by Region"
         onChange={handleChange}
+        // menuIsOpen={true}
       />
     </div>
   );

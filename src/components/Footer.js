@@ -1,12 +1,13 @@
 import react from "react";
+import { FooterDiv } from "./styleComponents/FooterStyles";
 
 function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <div className="footer">
-      <p className="copyright">Roxan © {year} </p>
-    </div>
+    <FooterDiv>
+      <p>Roxan © {year} </p>
+    </FooterDiv>
   );
 }
 

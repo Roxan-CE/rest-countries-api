@@ -31,7 +31,7 @@ function App() {
         <div>
           <Header theme={themeMode} onClick={themeToggler} />
           <Search theme={themeMode} />
-          <Footer />
+          <Footer theme={themeMode} />
         </div>
       </>
     </ThemeProvider>
