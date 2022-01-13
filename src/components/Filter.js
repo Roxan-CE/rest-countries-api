@@ -25,6 +25,20 @@ function Filter(props) {
         color: state.isFocused ? props.theme.element : props.theme.text,
         backgroundColor: state.isFocused ? props.theme.text : "transparent",
       },
+
+      "@media only screen and (min-width: 1024px)": {
+        ...provided,
+        fontSize: "1.1rem",
+        color: state.isFocused ? props.theme.element : props.theme.text,
+        backgroundColor: state.isFocused ? props.theme.text : "transparent",
+      },
+
+      "@media only screen and (min-width: 1440px)": {
+        ...provided,
+        fontSize: "0.90rem",
+        color: state.isFocused ? props.theme.element : props.theme.text,
+        backgroundColor: state.isFocused ? props.theme.text : "transparent",
+      },
     }),
 
     container: (provided) => ({
@@ -33,13 +47,27 @@ function Filter(props) {
       paddingTop: 0,
       paddingRight: 0,
       paddingLeft: 0,
-      width: "100vw",
 
       "@media only screen and (min-width: 750px)": {
         ...provided,
-        paddingTop: 32,
+        paddingTop: 30,
         paddingRight: 20,
-        paddingLeft: 32,
+        paddingLeft: "5%",
+        backgroundColor: "transparent",
+      },
+
+      "@media only screen and (min-width: 1024px)": {
+        ...provided,
+        paddingTop: 55,
+        paddingRight: 0,
+        paddingLeft: "20%",
+        backgroundColor: "transparent",
+      },
+      "@media only screen and (min-width: 1440px)": {
+        ...provided,
+        paddingTop: 48,
+        paddingRight: 0,
+        paddingLeft: "35%",
         backgroundColor: "transparent",
       },
     }),
@@ -54,6 +82,18 @@ function Filter(props) {
         ...provided,
         width: 65,
         height: 100,
+        backgroundColor: "transparent",
+      },
+      "@media only screen and (min-width: 1024px)": {
+        ...provided,
+        width: 65,
+        height: 70,
+        backgroundColor: "transparent",
+      },
+      "@media only screen and (min-width: 1440px)": {
+        ...provided,
+        width: 65,
+        height: 56,
         backgroundColor: "transparent",
       },
     }),
@@ -86,6 +126,36 @@ function Filter(props) {
           backgroundColor: props.theme.element,
         },
       },
+
+      "@media only screen and (min-width: 1024px)": {
+        ...provided,
+        width: 300,
+        paddingLeft: 40,
+        borderRadius: 10,
+        backgroundColor: props.theme.element,
+        border: 0,
+        boxShadow: 0,
+        margin: 0,
+        "&:hover": {
+          border: state.isFocused ? 0 : 0,
+          backgroundColor: props.theme.element,
+        },
+      },
+
+      "@media only screen and (min-width: 1440px)": {
+        ...provided,
+        width: 205,
+        paddingLeft: 15,
+        borderRadius: 10,
+        backgroundColor: props.theme.element,
+        border: 0,
+        boxShadow: 0,
+        margin: 0,
+        "&:hover": {
+          border: state.isFocused ? 0 : 0,
+          backgroundColor: props.theme.element,
+        },
+      },
     }),
 
     dropdownIndicator: (provided) => ({
@@ -97,6 +167,16 @@ function Filter(props) {
       "@media only screen and (min-width: 750px)": {
         ...provided,
         fontSize: "1.1rem",
+        color: props.theme.text,
+      },
+      "@media only screen and (min-width: 1024px)": {
+        ...provided,
+        fontSize: "1rem",
+        color: props.theme.text,
+      },
+      "@media only screen and (min-width: 1440px)": {
+        ...provided,
+        fontSize: "0.7rem",
         color: props.theme.text,
       },
     }),
@@ -122,7 +202,25 @@ function Filter(props) {
         width: 400,
         backgroundColor: props.theme.element,
         top: 132,
-        left: 32,
+        left: 38,
+        borderRadius: 10,
+      },
+      "@media only screen and (min-width: 1024px)": {
+        ...provided,
+        width: 300,
+        backgroundColor: props.theme.element,
+        top: 124,
+        left: 62,
+        borderRadius: 10,
+      },
+
+      "@media only screen and (min-width: 1440px)": {
+        ...provided,
+        width: 205,
+        backgroundColor: props.theme.element,
+        top: 102,
+        left: 152,
+        borderRadius: 10,
       },
     }),
 
@@ -134,6 +232,16 @@ function Filter(props) {
       "@media only screen and (min-width: 750px)": {
         ...provided,
         fontSize: "1.5rem",
+        color: props.theme.text,
+      },
+      "@media only screen and (min-width: 1024px)": {
+        ...provided,
+        fontSize: "1.15rem",
+        color: props.theme.text,
+      },
+      "@media only screen and (min-width: 1440px)": {
+        ...provided,
+        fontSize: "0.90rem",
         color: props.theme.text,
       },
     }),
@@ -153,6 +261,18 @@ function Filter(props) {
       "@media only screen and (min-width: 750px)": {
         ...provided,
         fontSize: "1.5rem",
+        color: props.theme.text,
+        backgroundColor: "transparent",
+      },
+      "@media only screen and (min-width: 1024px)": {
+        ...provided,
+        fontSize: "1.15rem",
+        color: props.theme.text,
+        backgroundColor: "transparent",
+      },
+      "@media only screen and (min-width: 1440px)": {
+        ...provided,
+        fontSize: "0.90rem",
         color: props.theme.text,
         backgroundColor: "transparent",
       },

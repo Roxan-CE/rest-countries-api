@@ -2,7 +2,13 @@ import Searchbar from "./Searchbar";
 import Filter from "./Filter";
 import React, { useState } from "react";
 import Datalist from "./Datalist";
-import { SearchDiv } from "./styleComponents/SearchbarStyles";
+import {
+  FilterDiv,
+  SearchBarDiv,
+  SFcontainer,
+  TopContainer,
+} from "./styleComponents/SearchbarStyles";
+import { DataDiv } from "./styleComponents/CardStyles";
 
 function Search(props) {
   // API LOGIC
@@ -14,11 +20,22 @@ function Search(props) {
   };
 
   return (
-    <SearchDiv>
-      <Searchbar theme={props.theme} onSubmit={changeSelection} />
-      <Filter theme={props.theme} onSelect={changeSelection} />
-      <Datalist theme={props.theme} API={apiURL} />
-    </SearchDiv>
+    <TopContainer>
+      <SFcontainer>
+        {" "}
+        <SearchBarDiv>
+          {" "}
+          <Searchbar theme={props.theme} onSubmit={changeSelection} />
+        </SearchBarDiv>
+        <FilterDiv>
+          {" "}
+          <Filter theme={props.theme} onSelect={changeSelection} />
+        </FilterDiv>
+      </SFcontainer>
+      <DataDiv>
+        <Datalist theme={props.theme} API={apiURL} />
+      </DataDiv>
+    </TopContainer>
   );
 }
 

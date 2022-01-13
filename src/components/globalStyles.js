@@ -17,7 +17,11 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0;
     padding: 0; 
     min-width: 750px;
-
+  }
+  @media ${device.laptop} {
+    margin: 0;
+    padding: 0; 
+    min-width: 1024px;
   }
   
   }

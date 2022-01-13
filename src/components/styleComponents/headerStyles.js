@@ -9,14 +9,7 @@ const Div = styled.div`
   transition: background 0.2s ease-in, color 0.2s ease-in;
   padding: 0;
   margin: 0;
-  max-width: 100vw;
-
-  @media ${device.tablet} {
-    min-width: 750px;
-  }
-
-  @media ${device.desktop} {
-  }
+  min-width: 100vw;
 `;
 
 const StyledHeader = styled.header`
@@ -28,6 +21,12 @@ const StyledHeader = styled.header`
   @media ${device.tablet} {
     flex-wrap: nowrap;
   }
+  @media ${device.laptop} {
+    padding: 5% 4.5%;
+  }
+  @media ${device.laptopL} {
+    padding: 1.5% 4.5%;
+  }
 `;
 
 const H1 = styled.h1`
@@ -37,33 +36,46 @@ const H1 = styled.h1`
   margin: 0 auto;
   line-height: 36px;
   align-self: center;
-  text-align: center;
 
   @media ${device.tablet} {
-    font-weight: 800;
     font-size: 1.7rem;
     padding: 0;
     margin: 0;
-    line-height: 36px;
-    align-self: center;
+  }
+
+  @media ${device.laptop} {
+    font-size: 1.6rem;
+    padding-left: 40px;
+  }
+
+  @media ${device.laptopL} {
+    font-size: 1.4rem;
+    padding-left: 20px;
+    letter-spacing: 0.5px;
   }
 `;
 
-const ThemeToggle = styled.p`
+const ThemeToggle = styled.div`
   font-weight: 600;
   font-size: 1rem;
   padding: 0;
   margin: 0 auto;
   cursor: pointer;
-  text-align: center;
+  display: flex;
+  align-self: center;
 
   @media ${device.tablet} {
     text-align: left;
-    font-weight: 600;
     font-size: 1.5rem;
-    padding: 0;
     margin: 0;
-    cursor: pointer;
+  }
+
+  @media ${device.laptop} {
+    font-size: 1.3rem;
+  }
+  @media ${device.laptopL} {
+    font-size: 0.98rem;
+    padding-right: 20px;
   }
 `;
 
@@ -74,6 +86,13 @@ const MoonIcon = styled.svg`
   @media ${device.tablet} {
     width: 1.7rem;
     margin: auto 15px;
+  }
+  @media ${device.laptop} {
+    width: 1.4rem;
+  }
+  @media ${device.laptopL} {
+    width: 1rem;
+    margin: auto 8px;
   }
 `;
 

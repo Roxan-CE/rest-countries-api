@@ -15,8 +15,8 @@ function Country(props) {
   }
 
   return (
-    <ContainerDiv className="container shadow-sm" onClick={handleClick}>
-      <StyledCard className="col-sm-12">
+    <ContainerDiv className="col-sm-12 col-md-4 col-lg-2" onClick={handleClick}>
+      <StyledCard>
         <StyledImg src={props.flag} className="flag card-img-top" alt="Flag" />
         <CardBody className="card-body">
           <h5 className="card-title">{props.name}</h5>

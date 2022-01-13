@@ -1,13 +1,40 @@
 import styled from "styled-components";
 import { device } from "./device.js";
 
-const SearchDiv = styled.div`
+const TopContainer = styled.div`
   margin: 0;
   padding: 0;
-  width: 100vw;
+  max-width: 100vw;
+`;
 
+const SFcontainer = styled.div`
   @media ${device.tablet} {
-    min-width: 750px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  @media ${device.laptop} {
+    flex-wrap: nowrap;
+  }
+  @media ${device.laptopL} {
+    height: 120px;
+  }
+`;
+
+const SearchBarDiv = styled.div`
+  width: 100%;
+  @media ${device.laptop} {
+    width: 60%;
+  }
+  @media ${device.laptopL} {
+    width: 70%;
+  }
+`;
+
+const FilterDiv = styled.div`
+  width: 100%;
+  @media ${device.laptop} {
+    width: 30%;
   }
 `;
 
@@ -21,8 +48,22 @@ const CoverDiv = styled.div`
   transform: scale(0.45);
 
   @media ${device.tablet} {
-    margin: 14px -90px;
-    transform: scale(0.72);
+    margin: 14px -210px;
+    transform: scale(0.59);
+  }
+  @media ${device.laptop} {
+    transform: scale(0.45);
+    width: 100vw;
+    margin: 14px 0px 14px -240px;
+    padding: 30px 0px;
+    left: 0px;
+  }
+
+  @media ${device.laptopL} {
+    transform: scale(0.36);
+    margin: 0px 0px 14px -380px;
+    padding: 30px 0px;
+    left: 0px;
   }
 `;
 
@@ -41,6 +82,11 @@ const Scover = styled.div`
   width: 150px;
   padding-left: 70px;
 
+  @media ${device.laptopL} {
+    padding-left: 90px;
+    transform: scale(0.9);
+  }
+
   &:hover div {
     top: -1px;
     width: 35px;
@@ -48,6 +94,9 @@ const Scover = styled.div`
     border-width: 0;
     background-color: ${(props) => props.theme.input};
     border-radius: 20px;
+
+    @media ${device.laptopL} {
+    }
   }
 
   &:hover span {
@@ -115,7 +164,6 @@ const TextInput = styled.input`
   margin: 0;
   border: 0;
   background-color: transparent;
-  width: 100%;
   height: 96px;
   font-size: 2.5rem;
   line-height: 1;
@@ -154,7 +202,6 @@ const ButtonSpan = styled.span`
 `;
 
 export {
-  SearchDiv,
   CoverDiv,
   FormInput,
   TBDiv,
@@ -164,4 +211,8 @@ export {
   Tdiv,
   TextInput,
   ButtonSpan,
+  TopContainer,
+  SearchBarDiv,
+  FilterDiv,
+  SFcontainer,
 };
