@@ -2,13 +2,11 @@ import Searchbar from "./Searchbar";
 import Filter from "./Filter";
 import React, { useState } from "react";
 import Datalist from "./Datalist";
-import {
-  FilterDiv,
-  SearchBarDiv,
-  SFcontainer,
-  TopContainer,
-} from "./styleComponents/SearchbarStyles";
-import { DataDiv } from "./styleComponents/CardStyles";
+import { DataDiv } from "./styleComponents/CardStyles/DataDiv";
+import { TopContainer } from "./styleComponents/SearchBarStyles/TopContainer";
+import SFcontainer from "./styleComponents/SearchBarStyles/SFcontainer";
+import { SearchBarDiv } from "./styleComponents/SearchBarStyles/SearchBarDiv";
+import { FilterDiv } from "./styleComponents/SearchBarStyles/FilterDiv";
 
 function Search(props) {
   // API LOGIC

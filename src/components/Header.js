@@ -1,11 +1,9 @@
 import React from "react";
-import {
-  Div,
-  StyledHeader,
-  H1,
-  ThemeToggle,
-  MoonIcon,
-} from "./styleComponents/headerStyles";
+import { Div } from "./styleComponents/HeaderStyles/Div";
+import { H1 } from "./styleComponents/HeaderStyles/H1";
+import { ThemeToggle } from "./styleComponents/HeaderStyles/ThemeToggle";
+import { StyledHeader } from "./styleComponents/HeaderStyles/StyledHeader";
+import { MoonIcon } from "./styleComponents/HeaderStyles/MoonIcon";
 
 function Header(props) {
   return (

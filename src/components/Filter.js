@@ -18,6 +18,9 @@ function Filter(props) {
       margin: 0,
       color: state.isFocused ? props.theme.element : props.theme.text,
       backgroundColor: state.isFocused ? props.theme.text : "transparent",
+      "&:hover": {
+        cursor: "pointer",
+      },
 
       "@media only screen and (min-width: 750px)": {
         ...provided,
@@ -47,7 +50,6 @@ function Filter(props) {
       paddingTop: 0,
       paddingRight: 0,
       paddingLeft: 0,
-
       "@media only screen and (min-width: 750px)": {
         ...provided,
         paddingTop: 30,
@@ -77,6 +79,7 @@ function Filter(props) {
       width: 60,
       height: 74,
       backgroundColor: "transparent",
+      cursor: "pointer",
 
       "@media only screen and (min-width: 750px)": {
         ...provided,
@@ -92,7 +95,7 @@ function Filter(props) {
       },
       "@media only screen and (min-width: 1440px)": {
         ...provided,
-        width: 65,
+        width: 40,
         height: 56,
         backgroundColor: "transparent",
       },
@@ -110,6 +113,7 @@ function Filter(props) {
       "&:hover": {
         border: state.isFocused ? 0 : 0,
         backgroundColor: props.theme.element,
+        cursor: "pointer",
       },
 
       "@media only screen and (min-width: 750px)": {

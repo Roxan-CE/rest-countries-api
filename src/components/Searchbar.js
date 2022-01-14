@@ -1,16 +1,12 @@
 import React, { useState } from "react";
-import SearchIcon from "@mui/icons-material/Search";
-import {
-  CoverDiv,
-  FormInput,
-  TBDiv,
-  Scover,
-  SubmitButton,
-  Scircle,
-  Tdiv,
-  TextInput,
-  ButtonSpan,
-} from "./styleComponents/SearchbarStyles";
+import { CoverDiv } from "./styleComponents/SearchBarStyles/CoverDiv";
+import { TBDiv } from "./styleComponents/SearchBarStyles/TBDiv";
+import { Scover } from "./styleComponents/SearchBarStyles/Scover";
+import { SubmitButton } from "./styleComponents/SearchBarStyles/SubmitButton";
+import { Scircle } from "./styleComponents/SearchBarStyles/Scircle";
+import { ButtonSpan } from "./styleComponents/SearchBarStyles/ButtonSpan";
+import { TextInput } from "./styleComponents/SearchBarStyles/TextInput";
+import { Tdiv } from "./styleComponents/SearchBarStyles/Tdiv";
 
 function Searchbar(props) {
   const [input, setInput] = useState("");
@@ -38,22 +34,6 @@ function Searchbar(props) {
   }
 
   return (
-    // <div className="searchBar shadow-sm">
-    //   <div className="form-group has-search">
-    //     <span className="form-control-feedback">
-    //       <SearchIcon onClick={handleClick} sx={{ fontSize: 42 }} />
-    //     </span>
-    //     <input
-    //       type="text"
-    //       onKeyDown={handleSubmit}
-    //       onChange={handleChange}
-    //       className="form-control"
-    //       placeholder="Search for a country... "
-    //       required
-    //     />
-    //   </div>
-    // </div>
-
     <CoverDiv>
       <TBDiv>
         <Scover>

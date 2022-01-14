@@ -1,11 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
-import {
-  ContainerDiv,
-  StyledCard,
-  StyledImg,
-  CardBody,
-} from "./styleComponents/CardStyles";
+import { CardBody } from "./styleComponents/CardStyles/CardBody";
+import { ContainerDiv } from "./styleComponents/CardStyles/ContainerDiv";
+import { StyledCard } from "./styleComponents/CardStyles/StyledCard";
+import { StyledImg } from "./styleComponents/CardStyles/StyledImg";
 
 function Country(props) {
   const navigate = useNavigate();

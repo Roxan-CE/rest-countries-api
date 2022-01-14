@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import countryCodes from "./countryCodes";
-import {
-  BorderButton,
-  BorderDiv,
-  CountryDiv,
-  Flag,
-  InfoBox,
-} from "./styleComponents/CountryStyles";
+
+import { BorderButton } from "./styleComponents/CountryStyles/BorderButton";
+import { BorderDiv } from "./styleComponents/CountryStyles/BorderDiv";
+import { BordersContainer } from "./styleComponents/CountryStyles/BordersContainer";
+import { CountryDiv } from "./styleComponents/CountryStyles/CountryDiv";
+import { Flag } from "./styleComponents/CountryStyles/Flag";
+import { InfoBox } from "./styleComponents/CountryStyles/InfoBox";
+import { LeftDiv } from "./styleComponents/CountryStyles/LeftDiv";
+import { MainInfo } from "./styleComponents/CountryStyles/MainInfo";
 
 function MoreInfo(props) {
   const { countryid } = useParams();
@@ -93,48 +95,52 @@ function MoreInfo(props) {
 
         <InfoBox>
           <h1>{countryid}</h1>
-          <div>
-            <p>
-              <span>Native Name:</span> {currentName[0]}{" "}
-            </p>
-            <p>
-              <span>Population:</span>{" "}
-              {countryData[0].population.toLocaleString()}
-            </p>
-            <p>
-              <span>Region:</span> {countryData[0].region}
-            </p>
-            <p>
-              <span>Sub Region:</span> {countryData[0].subregion}{" "}
-            </p>
-            <p>
-              <span>Capital:</span> {countryData[0].capital?.[0]}{" "}
-            </p>
-          </div>
-          <div>
-            <p>
-              <span>Top Level Domain:</span>
-              {countryData[0].tld.map((item) => item + " ")}
-            </p>
-            <p>
-              <span>Currencies:</span> {currencyList[0]?.name}{" "}
-            </p>
-            <p>
-              <span>Languages:</span>{" "}
-              {allCurrency && currentLanguage.join(", ")}
-            </p>
-          </div>
-          <h2>Border Countries:</h2>
-          <BorderDiv>
-            {countryData[0].borders &&
-              eachBorder.map((border) => {
-                return (
-                  <BorderButton onClick={handleBorderClick}>
-                    {border}
-                  </BorderButton>
-                );
-              })}{" "}
-          </BorderDiv>
+          <MainInfo>
+            <div>
+              <p>
+                <span>Native Name:</span> {currentName[0]}{" "}
+              </p>
+              <p>
+                <span>Population:</span>{" "}
+                {countryData[0].population.toLocaleString()}
+              </p>
+              <p>
+                <span>Region:</span> {countryData[0].region}
+              </p>
+              <p>
+                <span>Sub Region:</span> {countryData[0].subregion}{" "}
+              </p>
+              <p>
+                <span>Capital:</span> {countryData[0].capital?.[0]}{" "}
+              </p>
+            </div>
+            <LeftDiv>
+              <p>
+                <span>Top Level Domain:</span>
+                {countryData[0].tld.map((item) => item + " ")}
+              </p>
+              <p>
+                <span>Currencies:</span> {currencyList[0]?.name}{" "}
+              </p>
+              <p>
+                <span>Languages:</span>{" "}
+                {allCurrency && currentLanguage.join(", ")}
+              </p>
+            </LeftDiv>
+          </MainInfo>
+          <BordersContainer>
+            <h2>Border Countries:</h2>
+            <BorderDiv>
+              {countryData[0].borders &&
+                eachBorder.map((border) => {
+                  return (
+                    <BorderButton onClick={handleBorderClick}>
+                      {border}
+                    </BorderButton>
+                  );
+                })}{" "}
+            </BorderDiv>
+          </BordersContainer>
         </InfoBox>
       </CountryDiv>
     );

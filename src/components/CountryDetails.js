@@ -6,13 +6,12 @@ import { lightTheme, darkTheme } from "./Themes";
 import { useDarkMode } from "./useDarkMode";
 import { ThemeProvider } from "styled-components";
 import MoreInfo from "./MoreInfo";
-import {
-  Arrow,
-  Backbutton,
-  CountryDiv,
-  Icon,
-  MainDiv,
-} from "./styleComponents/CountryStyles";
+
+import { MainDiv } from "./styleComponents/CountryStyles/MainDiv";
+import { Arrow } from "./styleComponents/CountryStyles/Arrow";
+import { Backbutton } from "./styleComponents/CountryStyles/Backbutton";
+import { CountryBody } from "./styleComponents/CountryStyles/CountryBody";
+import { Icon } from "./styleComponents/CountryStyles/Icon";
 
 function CountryDetails() {
   // THEME CONTROL
@@ -38,17 +37,20 @@ function CountryDetails() {
     <ThemeProvider theme={themeMode}>
       <MainDiv>
         <Header theme={themeMode} onClick={themeToggler} />
-        <Backbutton
-          onClick={() => {
-            navigate(-1);
-          }}
-        >
-          <Icon>
-            <Arrow></Arrow>
-          </Icon>
-          Back
-        </Backbutton>
-        <MoreInfo theme={themeMode} />
+
+        <CountryBody>
+          <Backbutton
+            onClick={() => {
+              navigate(-1);
+            }}
+          >
+            <Icon>
+              <Arrow></Arrow>
+            </Icon>
+            Back
+          </Backbutton>
+          <MoreInfo theme={themeMode} />
+        </CountryBody>
         <Footer theme={themeMode} />
       </MainDiv>
     </ThemeProvider>
