@@ -107,7 +107,7 @@ function Filter(props) {
       paddingLeft: 20,
       borderRadius: 10,
       border: 0,
-      backgroundColor: props.theme.element,
+      backgroundColor: "transparent",
       boxShadow: "0 5px 20px rgb(0 0 0 / 8%), 0 0 0 10px transparent",
       margin: "0 auto",
       "&:hover": {

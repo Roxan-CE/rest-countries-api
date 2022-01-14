@@ -11,7 +11,7 @@ import { FilterDiv } from "./styleComponents/SearchBarStyles/FilterDiv";
 function Search(props) {
   // API LOGIC
 
-  const [apiURL, setApiUrl] = useState("https://restcountries.com/v3.1/all");
+  const [apiURL, setApiUrl] = useState("https://restcountries.com/v3.1/all?");
 
   const changeSelection = (selection) => {
     setApiUrl(selection);

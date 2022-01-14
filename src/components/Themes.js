@@ -8,12 +8,14 @@ const darkModeBackground = "#202c37";
 const lightModeGrey = "#b1b1b1";
 
 export const lightTheme = {
+  currentTheme: "light",
   body: lightModeBackground,
   text: lightModeText,
   element: lightModeElement,
   input: lightModeGrey,
 };
 export const darkTheme = {
+  currentTheme: "dark",
   body: darkModeBackground,
   text: lightModeBackground,
   element: darkModeElement,

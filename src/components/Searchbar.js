@@ -7,6 +7,7 @@ import { Scircle } from "./styleComponents/SearchBarStyles/Scircle";
 import { ButtonSpan } from "./styleComponents/SearchBarStyles/ButtonSpan";
 import { TextInput } from "./styleComponents/SearchBarStyles/TextInput";
 import { Tdiv } from "./styleComponents/SearchBarStyles/Tdiv";
+import { ClearButton } from "./styleComponents/SearchBarStyles/ClearButton";
 
 function Searchbar(props) {
   const [input, setInput] = useState("");
@@ -33,6 +34,10 @@ function Searchbar(props) {
     }
   }
 
+  function handleClear() {
+    setInput("");
+  }
+
   return (
     <CoverDiv>
       <TBDiv>
@@ -48,9 +53,13 @@ function Searchbar(props) {
             onKeyDown={handleSubmit}
             onChange={handleChange}
             placeholder="Search for a country... "
+            value={input}
             required
           />
         </Tdiv>
+        <ClearButton isNotEmpty={input} onClick={handleClear}>
+          X
+        </ClearButton>
       </TBDiv>
     </CoverDiv>
   );

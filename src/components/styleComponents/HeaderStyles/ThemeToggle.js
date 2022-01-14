@@ -10,6 +10,14 @@ export const ThemeToggle = styled.div`
   display: flex;
   align-self: center;
 
+  :hover {
+    color: ${(props) =>
+      props.theme.currentTheme === "light" ? "#FFFFFF" : "#2b3945"};
+    background-color: ${(props) =>
+      props.theme.currentTheme === "dark" ? "#FFFFFF" : "#2b3945"};
+    border-radius: 5px;
+  }
+
   @media ${device.tablet} {
     text-align: left;
     font-size: 1.5rem;
