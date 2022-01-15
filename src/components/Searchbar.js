@@ -36,6 +36,7 @@ function Searchbar(props) {
 
   function handleClear() {
     setInput("");
+    props.onSubmit("https://restcountries.com/v3.1/all?");
   }
 
   return (

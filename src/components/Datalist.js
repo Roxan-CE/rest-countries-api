@@ -27,7 +27,12 @@ function Datalist(props) {
   } else if (!isLoaded) {
     return <div>Loading...</div>;
   } else if (countries.status === 404) {
-    return <div>ERROR 404</div>;
+    return (
+      <div style={{ "text-align": "center", "padding-top": "80px" }}>
+        <h4>ERROR 404</h4>
+        <p>No results found. Please ensure the spelling is correct.</p>
+      </div>
+    );
   } else {
     return countries.map((country) => {
       return (

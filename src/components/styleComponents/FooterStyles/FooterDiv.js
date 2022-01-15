@@ -5,7 +5,7 @@ const FooterDiv = styled.div`
   color: ${(props) => props.theme.text};
   font-family: "Nunito Sans", sans-serif;
   font-weight: 300;
-  padding: 0;
+  padding-top: 100px;
   margin: 0;
 
   & p {
