@@ -6,7 +6,7 @@ export const StyledImg = styled.img`
   font-family: "Nunito Sans", sans-serif;
   border-top-right-radius: 6px;
   border-top-left-radius: 6px;
-  height: auto;
+  height: 240px;
   width: 100%;
 
   @media ${device.tablet} {
@@ -19,7 +19,7 @@ export const StyledImg = styled.img`
   @media ${device.laptop} {
     border-top-right-radius: 6px;
     border-top-left-radius: 6px;
-    height: 260;
+    height: 260px;
     width: 400px;
     margin: 0;
   }

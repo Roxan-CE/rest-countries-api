@@ -5,10 +5,10 @@ export const StyledCard = styled.div`
   background: ${(props) => props.theme.element};
   font-family: "Nunito Sans", sans-serif;
   color: ${(props) => props.theme.text};
-  margin: 80px auto;
+  margin: 40px auto;
   height: auto;
   border-radius: 6px;
-  width: 90%;
+  width: 100%;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1), 0 0 0 10px transparent;
 
   @media ${device.tablet} {

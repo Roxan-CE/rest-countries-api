@@ -13,9 +13,6 @@ export const TextInput = styled.input`
   outline: none;
   width: 94%;
 
-  ::value {
-  }
-
   &:hover {
     background-color: ${(props) => props.theme.body};
     border-radius: 10px;
@@ -31,7 +28,7 @@ export const TextInput = styled.input`
     font-size: 2.5rem;
 
     ::placeholder {
-      padding: 0 0 0 20px;
+      padding: 0 0 0 60px;
     }
   }
 

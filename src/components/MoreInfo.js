@@ -36,6 +36,10 @@ function MoreInfo(props) {
       );
   }, [countryid]);
 
+  useEffect(() => {
+    window.scrollTo({ behavior: "smooth", top: "0px" });
+  }, [countryid]);
+
   if (error) {
     return <div>Error: {error.message}</div>;
   } else if (!isLoaded || !countryData[0]) {

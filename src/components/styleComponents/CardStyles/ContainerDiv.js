@@ -5,7 +5,7 @@ export const ContainerDiv = styled.div`
   background: transparent;
   font-family: "Nunito Sans", sans-serif;
   padding: 0;
-  max-width: 100vw;
+  width: 100vw;
   margin: 0 auto;
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;

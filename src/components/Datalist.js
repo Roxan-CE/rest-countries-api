@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Country from "./Country";
+
+import Pagination from "./Pagination";
 
 function Datalist(props) {
   const [error, setError] = useState(null);
@@ -29,24 +30,19 @@ function Datalist(props) {
   } else if (countries.status === 404) {
     return (
       <div style={{ "text-align": "center", "padding-top": "80px" }}>
-        <h4>ERROR 404</h4>
         <p>No results found. Please ensure the spelling is correct.</p>
       </div>
     );
   } else {
-    return countries.map((country) => {
-      return (
-        <Country
-          theme={props.theme}
-          key={country.cca3 + country.ccn3}
-          name={country.name.common}
-          population={country.population}
-          region={country.region}
-          capital={country.capital?.[0]}
-          flag={country.flags.png}
-        />
-      );
-    });
+    return (
+      <div>
+        {countries.length > 0 ? (
+          <Pagination data={countries} pageLimit={5} dataLimit={8} />
+        ) : (
+          <h1>No Countries to display</h1>
+        )}
+      </div>
+    );
   }
 }
 

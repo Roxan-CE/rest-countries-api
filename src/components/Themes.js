@@ -13,6 +13,7 @@ export const lightTheme = {
   text: lightModeText,
   element: lightModeElement,
   input: lightModeGrey,
+  disabled: lightModeGrey,
 };
 export const darkTheme = {
   currentTheme: "dark",
@@ -20,4 +21,5 @@ export const darkTheme = {
   text: lightModeBackground,
   element: darkModeElement,
   input: lightModeBackground,
+  disabled: lightModeInput,
 };
